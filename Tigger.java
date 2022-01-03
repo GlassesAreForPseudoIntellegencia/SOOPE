@@ -8,7 +8,6 @@ import com.qualcomm.robotcore.hardware.DcMotor;
 import com.qualcomm.robotcore.util.ElapsedTime;
 import com.qualcomm.robotcore.util.Range;
 
-
 @TeleOp(name="Tigger", group="Linear Opmode")
 
 public class Tigger extends LinearOpMode {
@@ -22,7 +21,6 @@ public class Tigger extends LinearOpMode {
     private DcMotor armDriver = null;
     private DcMotor ernie_ducky = null;
     private Servo ernies_hand = null;
-    
 
     @Override
     public void runOpMode() {
@@ -37,13 +35,11 @@ public class Tigger extends LinearOpMode {
         armDriver = hardwareMap.get(DcMotor.class, "arm_driver");
         ernie_ducky = hardwareMap.get(DcMotor.class, "ernies_ducky"); //This is for the carousel
         ernies_hand = hardwareMap.get(Servo.class, "ernies_hand" ); //This is the claw
-
         
         leftDrive.setDirection(DcMotor.Direction.REVERSE);
         rightDrive.setDirection(DcMotor.Direction.FORWARD);
         leftDriver.setDirection(DcMotor.Direction.REVERSE);
         rightDriver.setDirection(DcMotor.Direction.FORWARD);
-
         
         waitForStart();
         runtime.reset();
