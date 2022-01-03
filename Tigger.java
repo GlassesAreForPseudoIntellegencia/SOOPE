@@ -108,7 +108,6 @@ public class Tigger extends LinearOpMode {
                 ernie_ducky.setPower(0);
             }
             
-            
             // Show the elapsed game time and wheel power for each individua wheel
             telemetry.addData("Status", "Run Time: " + runtime.toString());
             telemetry.addData("Front Motors", "left (%.2f), right (%.2f)", frontleftPower, frontrightPower);
