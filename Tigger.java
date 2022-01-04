@@ -1,3 +1,4 @@
+//Imports to get all the prep we need
 package org.firstinspires.ftc.teamcode;
 
 import com.qualcomm.robotcore.eventloop.opmode.LinearOpMode;
@@ -7,6 +8,8 @@ import com.qualcomm.robotcore.eventloop.opmode.Disabled;
 import com.qualcomm.robotcore.hardware.DcMotor;
 import com.qualcomm.robotcore.util.ElapsedTime;
 import com.qualcomm.robotcore.util.Range;
+
+//names the code as driver controlled
 
 @TeleOp(name="Tigger", group="Linear Opmode")
 
@@ -36,6 +39,7 @@ public class Tigger extends LinearOpMode {
         ernie_ducky = hardwareMap.get(DcMotor.class, "ernies_ducky"); //This is for the carousel
         ernies_hand = hardwareMap.get(Servo.class, "ernies_hand" ); //This is the claw
         
+        //makes sure everything is spinning in the right directions
         leftDrive.setDirection(DcMotor.Direction.REVERSE);
         rightDrive.setDirection(DcMotor.Direction.FORWARD);
         leftDriver.setDirection(DcMotor.Direction.REVERSE);
@@ -52,13 +56,14 @@ public class Tigger extends LinearOpMode {
             double backleftPower;
             double backrightPower;
 
+            //variables assigned a value
             double drive = gamepad1.right_trigger;
             double turn  =  gamepad1.left_stick_x;
             double reverse = -gamepad1.left_trigger;
             double armPower = gamepad1.right_stick_y;
             double arm = Range.clip(armPower, -0.5 , 0.09);
             
-            //The reason for this is so it is easier to do controlled movements and put on some speed when we need it
+            //The reason for 'b is for boost' is so it is easier to do controlled movements and put on some speed when we need it
             if (gamepad1.b == true) { 
                 frontleftPower    = Range.clip(drive + reverse + turn, -1.0, 1.0);
                 frontrightPower   = Range.clip(drive + reverse - turn, -1.0, 1.0);
