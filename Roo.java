@@ -47,14 +47,14 @@ public class Roo extends LinearOpMode {
         rightDrive.setPower(-1);
         leftDriver.setPower(-1);
         rightDriver.setPower(-1);        
-        while ((opModeIsActive()) && (runtime.seconds() < 0.5)) {
+        while ((opModeIsActive()) && (runtime.seconds() < 0.5)) { //Without an encoder we have to rely on crude time measurements.
             telemetry.addData("Status", "Runtime", runtime.seconds());
             telemetry.update();
         }
         
         ernie_ducky.setPower(1);
         runtime.reset();
-        while ((opModeIsActive()) && (runtime.seconds() < 2.0)) {
+        while ((opModeIsActive()) && (runtime.seconds() < 2.0)) { //MAKE SURE TO TEST
             telemetry.addData("Status", "Runtime", runtime.seconds());
             telemetry.update();
         }
